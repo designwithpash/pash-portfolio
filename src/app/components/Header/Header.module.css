@@ -1,0 +1,123 @@
+.header {
+    display: flex;
+    justify-content: center;
+    z-index: 5000;
+    width: 100%;
+}
+
+.navigation {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 10rem;
+    position: fixed;
+    padding: 1rem;
+    z-index: 100;
+    top: 1%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.navRight {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: var(--primary-orange);
+}
+
+.primaryBtn {
+    background: linear-gradient(270deg, #FF2B80 2.14%, #FF881F 102.54%);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    border: none;
+    font-family: "visby-cf";
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.primaryBtn:hover {
+    transform: scale(1.05);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.hamburgerLine {
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        width: 90%;
+        padding: 0.8rem;
+    }
+
+    .navRight {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        transition: top 0.3s ease;
+    }
+
+    .navRightActive {
+        composes: navRight;
+        top: 0;
+    }
+
+    .navLinks {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 101;
+    }
+
+    .hamburgerActive .hamburgerLine:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .hamburgerActive .hamburgerLine:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburgerActive .hamburgerLine:nth-child(3) {
+        transform: rotate(-45deg) translate(10px, -10px);
+    }
+} 

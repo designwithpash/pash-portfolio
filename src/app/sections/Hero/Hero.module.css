@@ -1,0 +1,114 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.heroArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: var(--box-radius);
+    margin-top: 8rem;
+    overflow: hidden;
+    border: 1px solid rgb(104, 104, 104);
+    box-shadow: 10px 30px 100px rgba(0, 0, 0, 0.2);
+}
+
+.leftContent {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 4rem;
+}
+
+.rightContent {
+    margin: 0;
+    display: flex;
+}
+
+.heroImage {
+    width: 400px;
+    margin-top: 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--text-color);
+}
+
+.highlight {
+    background: linear-gradient(270deg, #FF2B80 2.14%, #FF881F 102.54%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.description {
+    font-size: var(--body-font);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.primaryBtn {
+    background: linear-gradient(270deg, #FF2B80 2.14%, #FF881F 102.54%);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    border: none;
+    font-family: "visby-cf";
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.primaryBtn:hover {
+    transform: scale(1.05);
+}
+
+.bgVideo {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    object-fit: cover;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .heroArea {
+        flex-direction: column;
+        margin-top: 6rem;
+        padding: 2rem;
+    }
+
+    .leftContent {
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .heroImage {
+        width: 300px;
+        margin-top: 1rem;
+    }
+
+    .description {
+        text-align: center;
+    }
+} 

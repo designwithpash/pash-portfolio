@@ -7,14 +7,16 @@
     overflow-x: hidden;
 }
 
-.testimonials-section .wrapper {
+.wrapper {
     position: relative;
     overflow: visible;
     padding: 0 20px;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.testimonials-carousel {
+.carousel {
     position: relative;
     width: 100%;
     margin: 0 auto;
@@ -22,7 +24,7 @@
     overflow-x: hidden;
 }
 
-.carousel-container {
+.container {
     position: relative;
     perspective: 1200px;
     height: 450px;
@@ -34,7 +36,7 @@
     overflow: hidden;
 }
 
-.testimonial-card {
+.card {
     position: absolute;
     width: 60%;
     max-width: 650px;
@@ -51,7 +53,8 @@
     left: 50%;
 }
 
-.testimonial-card.active {
+.cardActive {
+    composes: card;
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateZ(0);
@@ -61,7 +64,8 @@
     -webkit-backdrop-filter: blur(30px);
 }
 
-.testimonial-card.prev {
+.cardPrev {
+    composes: card;
     opacity: 0.5;
     visibility: visible;
     transform: translateX(-75%) translateZ(-100px) rotateY(12deg);
@@ -71,7 +75,8 @@
     -webkit-backdrop-filter: blur(50px);
 }
 
-.testimonial-card.next {
+.cardNext {
+    composes: card;
     opacity: 0.5;
     visibility: visible;
     transform: translateX(-25%) translateZ(-100px) rotateY(-12deg);
@@ -81,68 +86,59 @@
     -webkit-backdrop-filter: blur(50px);
 }
 
-.testimonial-content {
+.content {
     color: #fff;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
 }
 
-#quote {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    opacity: 0.5;
-}
-
-.testimonial-text {
+.text {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 30px;
     position: relative;
 }
 
-.client-info {
+.clientInfo {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-top: 30px;
 }
 
-.client-image {
+.clientImage {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.client-details {
+.clientDetails {
     display: flex;
     flex-direction: column;
 }
 
-.client-name {
+.clientName {
     font-weight: bold;
     margin: 0;
     font-size: 1.1rem;
 }
 
-.client-position {
+.clientPosition {
     opacity: 0.7;
     font-size: 0.9rem;
     margin: 5px 0 0 0;
 }
 
-.carousel-nav {
+.nav {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-top: 40px;
 }
 
-.carousel-nav button {
+.navButton {
     background: none;
     border: none;
     font-size: 28px;
@@ -153,40 +149,34 @@
     padding: 10px 20px;
 }
 
-.carousel-nav button:hover {
+.navButton:hover {
     opacity: 1;
 }
 
 @media (max-width: 768px) {
-    .testimonials-section,
-    .testimonials-carousel,
-    .carousel-container {
-        overflow-x: hidden;
-    }
-
-    .testimonial-card {
+    .card {
         padding: 30px 20px;
         width: 85%;
     }
 
-    .testimonial-card.prev {
+    .cardPrev {
         transform: translateX(-90%) translateZ(-100px) rotateY(10deg);
     }
 
-    .testimonial-card.next {
+    .cardNext {
         transform: translateX(-10%) translateZ(-100px) rotateY(-10deg);
     }
 
-    .testimonial-content {
+    .content {
         padding: 0;
     }
 
-    .testimonial-text {
+    .text {
         font-size: 1rem;
         line-height: 1.6;
     }
 
-    .client-image {
+    .clientImage {
         width: 50px;
         height: 50px;
     }
