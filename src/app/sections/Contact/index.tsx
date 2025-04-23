@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import { postToAPI } from '@/app/lib/api'
 
